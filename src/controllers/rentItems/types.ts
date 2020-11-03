@@ -3,4 +3,5 @@ export interface RentItem {
     rent_price: number;
     manufacture_date: number; // considering timestamp
     taken_by?: string;
+    created_by?: string;
 }

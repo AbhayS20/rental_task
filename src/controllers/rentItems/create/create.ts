@@ -5,14 +5,15 @@ import { RentItem } from "../types";
 export default async function create(req: Request, res: Response, next: NextFunction) {
     try {
 
-        const { name, rent_price, manufacture_date } = req.body;
+        const { name, rent_price, manufacture_date, user_id } = req.body;
         const db = await getInstance();
 
         const data: RentItem = {
             name,
             rent_price,
             manufacture_date,
-            taken_by: null
+            taken_by: null,
+            created_by: user_id
         };
 
         const result = await db.collection("rent_items").insertOne(data);
