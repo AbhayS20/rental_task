@@ -4,7 +4,7 @@
  */
 
 export function log(...n: any) {
-    if (process.env.mode === "devlopment") {
+    if (process.env.mode === "development") {
         console.log(...n);
     }
 }
